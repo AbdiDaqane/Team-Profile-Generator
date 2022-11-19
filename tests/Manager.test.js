@@ -1,30 +1,24 @@
-const Manager = require("../lib/Manager.js");
+const Manager = require("../lib/Manager");
+
+const name = "Mike";
+const id = "3034d";
+const email = "example@gmail.com";
+const officeNumber = "B201";
+const manager = new Manager(name, id, email, officeNumber);
 
 describe("Manager", () => {
-  const name = "Bill Lumbergh";
-  const id = 0;
-  const email = "bill.lumbergh@initech.com";
-  const officeNumber = "cubical45";
-  const role = "Manager";
-  const testManager = new Manager(name, id, email, officeNumber);
-
-  it("Should return correct office number", () => {
-    expect(testManager.officeNumber).toBe(officeNumber);
+  describe("Initialization", () => {
+    it("create instance of Manager with correct properties", () => {
+      expect(manager).toBeInstanceOf(Manager);
+      expect(manager.name).toBe(name);
+      expect(manager.id).toBe(id);
+      expect(manager.email).toBe(email);
+      expect(manager.officeNumber).toBe(officeNumber);
+    });
   });
-
-  it("Should return the Manager name when requested", () => {
-    expect(testManager.getName()).toBe(name);
-  });
-
-  it("Should return the Manager id when requested", () => {
-    expect(testManager.getId()).toBe(id);
-  });
-
-  it("Should return the Manager email when requested", () => {
-    expect(testManager.getEmail()).toBe(email);
-  });
-
-  it("Should return the Manager role when requested", () => {
-    expect(testManager.getRole()).toBe(role);
+  describe("getRole", () => {
+    it("return Manager", () => {
+      expect(manager.getRole()).toBe("Manager");
+    });
   });
 });

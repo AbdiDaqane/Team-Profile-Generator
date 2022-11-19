@@ -1,28 +1,29 @@
-const Engineer = require("../lib/Engineer.js");
+const Engineer = require("../lib/Engineer");
+
+const name = "Brian";
+const id = "3034d";
+const email = "example@gmail.com";
+const github = "Abdi";
+const engineer = new Engineer(name, id, email, github);
 
 describe("Engineer", () => {
-  const name = "Samir Nagheenanaj";
-  const id = 12;
-  const email = "samir.nagheenanaj@initech.com";
-  const gitHubUsername = "bravotango";
-  const role = "Engineer";
-  const returnedGitHub = `<a href="https://github.com/${gitHubUsername}">https://github.com/${gitHubUsername}</a>`;
-
-  const testEngineer = new Engineer(name, id, email, gitHubUsername);
-
-  it("Should return github linked account", () => {
-    expect(testEngineer.getGithub()).toBe(returnedGitHub);
+  describe("Initialization", () => {
+    it("create instance of Engineer with correct properties", () => {
+      expect(engineer).toBeInstanceOf(Engineer);
+      expect(engineer.name).toBe(name);
+      expect(engineer.id).toBe(id);
+      expect(engineer.email).toBe(email);
+      expect(engineer.github).toBe(github);
+    });
   });
-
-  it("Should return the Engineer name when requested", () => {
-    expect(testEngineer.getName()).toBe(name);
+  describe("getRole", () => {
+    it("return Engineer", () => {
+      expect(engineer.getRole()).toBe("Engineer");
+    });
   });
-
-  it("Should return the Engineer id when requested", () => {
-    expect(testEngineer.getId()).toBe(id);
-  });
-
-  it("Should return the Engineer role when requested", () => {
-    expect(testEngineer.getRole()).toBe(role);
+  describe("getGithub", () => {
+    it("Get Engineer github account", () => {
+      expect(engineer.getGithub()).toBe(engineer.github);
+    });
   });
 });

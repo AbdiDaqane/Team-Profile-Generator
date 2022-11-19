@@ -1,18 +1,37 @@
-const Employee = ("../lib/Employee.js");
+const Employee = require("../lib/Employee");
 
-describe("getters", () => {
-    const name = "kevin Durant";
-    const id = "33";
-    const email = "Kevin.Durant@gmail.com";
-    const role = "Employee";
+const name = "James";
+const id = "3034d";
+const email = "example@gmail.com";
+const employee = new Employee(name, id, email);
 
-    const testEmployee = new Employee(id,name,email);
-
-    it ("should return the Employee name when requested")
-    expect(testEmployee.getName().tobe(id));
-
-});
-
-it("should return the Employee is when requested", () =>{
-    expect(testEmployee.getId()).toBe(id);
+describe("Employee Class", () => {
+  describe("Initialization", () => {
+    it("Create a employee class with correct properties", () => {
+      expect(employee).toBeInstanceOf(Employee);
+      expect(employee.name).toBe(name);
+      expect(employee.id).toBe(id);
+      expect(employee.email).toBe(email);
+    });
+  });
+  describe("getName", () => {
+    it("return Employee Name", () => {
+      expect(employee.getName()).toBe(employee.name);
+    });
+  });
+  describe("getID", () => {
+    it("return Employee ID", () => {
+      expect(employee.getId()).toBe(employee.id);
+    });
+  });
+  describe("getEmail", () => {
+    it("return Employee Email", () => {
+      expect(employee.getEmail()).toBe(employee.email);
+    });
+  });
+  describe("getRole", () => {
+    it("return Employee Name", () => {
+      expect(employee.getRole()).toBe("Employee");
+    });
+  });
 });
