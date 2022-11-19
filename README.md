@@ -1,13 +1,13 @@
-##Team Profile Generator
+# Team Profile Generator
 This is a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so there are unit tests for every part of the code to ensure that the application is working without errors.
 
-##Satisfied User Story
+## Satisfied User Story
 AS A manager
 
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
 
-##Satisfied Acceptance Criteria
+## Satisfied Acceptance Criteria
 GIVEN a command-line application that accepts user input
 
 WHEN I am prompted for my team members and their information
@@ -34,7 +34,7 @@ THEN I am prompted to enter the intern’s name, ID, email, and school, and I am
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 
-##Application classes
+## Application classes
 The application includes Employee, Manager, Engineer, and Intern classes. The tests for these classes (in the _tests_ directory) ALL pass.
 
 The first class is an Employee parent class with the following properties and methods:
@@ -76,6 +76,8 @@ school
 getSchool()
 
 getRole()—overridden to return 'Intern'
+
+
 
 ##Screenshots
  ![Screenshot](assets/10-object-oriented-programming-homework-demo.png)
