@@ -79,8 +79,5 @@ getRole()—overridden to return 'Intern'
 
 
 
-##Screenshots
- ![Screenshot](assets/10-object-oriented-programming-homework-demo.png)
-
- ##Link
+ ## Link
  https://watch.screencastify.com/v/MsUQlvRll3RFSB3oDrYQ
